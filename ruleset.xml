@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress.com VIP Go Incompatabilities">
+	<description>Known blockers for using VIP Go.</description>
+
+	<autoload>./PHPCSCompatibility.php</autoload>
+	
+	<!-- the default likely isn't enough and/or hasn't been set for CLI so up it -->
+	<ini name="memory_limit" value="1024M"/>
+	
+	<!-- set default command line options -->
+	<arg value="s"/>
+	<arg name="extensions" value="php"/>
+	
+	<!-- Squiz sniffs -->
+	<rule ref="Squiz.PHP.Eval">
+		<type>error</type>
+	</rule>
+
+	<!-- WordPress sniffs -->
+	<rule ref="WordPress.DB.RestrictedClasses">
+		<type>error</type>
+	</rule>
+	<rule ref="WordPress.DB.RestrictedFunctions">
+		<type>error</type>
+	</rule>
+	<rule ref="WordPress.PHP.DiscouragedPHPFunctions.runtime_configuration">
+		<type>error</type>
+	</rule>
+	<rule ref="WordPress.PHP.DiscouragedPHPFunctions.system_calls">
+		<type>error</type>
+	</rule>
+	<rule ref="WordPress.PHP.DiscouragedPHPFunctions.obfuscation">
+		<type>error</type>
+	</rule>
+	
+	<!-- WordPress.VIP sniffs -->
+	<rule ref="WordPress.VIP.FileSystemWritesDisallow">
+		<type>error</type>
+	</rule>
+	<rule ref="WordPress.VIP.RestrictedFunctions.cookies">
+		<type>error</type>
+	</rule>
+	<rule ref="WordPress.VIP.RestrictedVariables.dbDelta">
+		<type>error</type>
+	</rule>
+	<rule ref="WordPress.VIP.SessionFunctionsUsage">
+		<type>error</type>
+	</rule>
+	<rule ref="WordPress.VIP.SessionVariableUsage">
+		<type>error</type>
+	</rule>
+	<rule ref="WordPress.VIP.TimezoneChange">
+		<type>error</type>
+	</rule>
+
+</ruleset>
