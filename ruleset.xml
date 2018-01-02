@@ -40,9 +40,6 @@
 	<rule ref="WordPress.VIP.RestrictedFunctions.cookies">
 		<type>error</type>
 	</rule>
-	<rule ref="WordPress.VIP.RestrictedVariables.dbDelta">
-		<type>error</type>
-	</rule>
 	<rule ref="WordPress.VIP.SessionFunctionsUsage">
 		<type>error</type>
 	</rule>
@@ -52,5 +49,16 @@
 	<rule ref="WordPress.VIP.TimezoneChange">
 		<type>error</type>
 	</rule>
-
+	
+	<!-- WordPressVIPMinimum sniffs -->
+	<rule ref="WordPressVIPMinimum.VIP.RestrictedFunctions.dbDelta_dbdelta">
+		<type>error</type>
+	</rule>
+	<rule ref="WordPressVIPMinimum.Variables.ServerVariables">
+		<type>error</type>
+	</rule>
+	<rule ref="WordPressVIPMinimum.Constants.ConstantRestrictions">
+		<type>error</type>
+	</rule>
+	
 </ruleset>
