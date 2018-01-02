@@ -19,14 +19,17 @@ Some useful defaults are set but can be overridden using `phpcs` flags:
 
 ## Example
 
-We'll install the above from source to the `~/projects` directory. Feel free to change this to the directory of your choice and replace accordingly in the commands below.
+We'll install the above from source to the `~/projects/coding-standards` directory. Feel free to change this to the directory of your choice and replace accordingly in the commands below.
 
-### Install PHPCS and the WordPress Coding Standards
+### Install PHPCS, the WordPress Coding Standards, the VIP Coding Standards, and this standard
 
 ```
-cd ~/projects
+mkdir -p cd ~/projects/coding-standards
+cd coding-standards
 git clone https://github.com/squizlabs/PHP_CodeSniffer.git phpcs
 git clone -b master https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git wpcs
+git clone -b master https://github.com/Automattic/VIP-Coding-Standards.git vipcs
+git clone -b master https://github.com/Automattic/VIP-Go-PHPCS-Blockers.git vipgoblockerscs
 ```
 
 ### Add PHPCS binaries to your `PATH`
@@ -37,17 +40,11 @@ source ~/.bash_profile
 ```
 If you are using a different shell, adjust the above to use your profile or rc file.
 
-## Install this standard
-
-```
-git clone https://github.com/Automattic/VIP-Go-PHPCS-Blockers
-```
-
-### Add both coding standards to PHPCS
+### Add all coding standards to PHPCS
 
 ```
 cd phpcs
-phpcs --config-set installed_paths ../wpcs,../VIP-Go-PHPCS-Blockers
+phpcs --config-set installed_paths ../wpcs,../vipcs,../vipgoblockerscs
 ```
 
 # Usage
