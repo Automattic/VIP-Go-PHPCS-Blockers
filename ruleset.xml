@@ -9,6 +9,7 @@
 	
 	<!-- set default command line options -->
 	<arg value="s"/>
+	<arg value="n"/>
 	<arg name="extensions" value="php"/>
 	
 	<!-- Squiz sniffs -->
